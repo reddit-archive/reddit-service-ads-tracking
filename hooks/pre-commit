@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if ! git diff --unified=0 --cached | pep8 --diff; then
+    echo "---"
+    echo "pep8 issues found. reddit follows pep8: https://github.com/reddit/styleguide"
+    echo "Ignore with --no-verify if you have high confidence in your changes."
+    exit 1
+fi
+
+if ! vagrant ssh -c "cd src; nosetests"; then
+  echo "---"
+  echo "Tests failing. please fix the tests before commiting"
+  echo "You can run the tests manually with \`vagrant ssh -c 'cd src; nosetests'\`."
+  echo "  use: \`-s\` to run with the interactive debugger"
+  exit 1
+fi

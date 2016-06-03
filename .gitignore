@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+__pycache__
+
+.coverage
+
+build/
+reddit_service_ads_tracking.egg-info
+reddit_service_ads_tracking/*_thrift

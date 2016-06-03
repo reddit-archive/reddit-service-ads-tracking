@@ -1,0 +1,7 @@
+# boost some hard limits on POSIX message queues
+
+# maximum number of messages in queue
+fs.mqueue.msg_max = 65536
+
+# maximum size of an individual message
+fs.mqueue.msgsize_max = 102400

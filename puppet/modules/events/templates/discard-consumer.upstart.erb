@@ -1,0 +1,12 @@
+description "consume, log, and discard events from the <%= @queue %> queue"
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+respawn limit 10 5
+
+limit msgqueue unlimited unlimited
+
+setuid <%= @user %>
+exec python -m baseplate.message_queue --read --max-messages 10000 --max-message-size 102400 /events-<%= @queue %>
