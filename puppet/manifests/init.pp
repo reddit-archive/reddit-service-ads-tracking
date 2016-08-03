@@ -19,8 +19,16 @@ class ads-tracking {
     command => 'make',
     require => [
       Package['python-setuptools'],
-      Package['python3-setuptools'],
       Package['python-baseplate'],
+    ],
+  }
+
+  # Set up the app
+  exec { 'install-app3':
+    cwd     => $project_path,
+    command => 'make python3',
+    require => [
+      Package['python3-setuptools'],
       Package['python3-baseplate'],
     ],
   }
