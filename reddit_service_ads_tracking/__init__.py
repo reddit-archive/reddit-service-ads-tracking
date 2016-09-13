@@ -96,7 +96,7 @@ class TrackingService(object):
         click = events.ClickEvent(
             url=destination,
             process_notes=process_notes,
-            ctx=ctx,
+            request=ctx,
             expired_on=expired_on,
             **data
         )
