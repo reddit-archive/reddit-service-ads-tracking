@@ -30,11 +30,22 @@ class UrlsTests(unittest.TestCase):
         self.assertEqual(urls.fix_query_encoding(url), url)
 
     def test_fix_query_encoding_retains_blank_values(self):
-        url = "https://example.com?foo="
+        url1 = "https://example.com?foo=&bar=bing"
+        url2 = "https://example.com?foo="
+        url3 = "https://example.com?bar=bing&foo="
 
-        self.assertEqual(urls.fix_query_encoding(url), url)
+        self.assertEqual(urls.fix_query_encoding(url1), url1)
+        self.assertEqual(urls.fix_query_encoding(url2), url2)
+        self.assertEqual(urls.fix_query_encoding(url3), url3)
 
-        self.assertEqual(urls.fix_query_encoding(url), url)
+    def test_fix_query_encoding_retains_blank_values_without_equals(self):
+        url1 = "https://example.com?foo&bar=bing"
+        url2 = "https://example.com?foo"
+        url3 = "https://example.com?bar=bing&foo"
+
+        self.assertEqual(urls.fix_query_encoding(url1), url1)
+        self.assertEqual(urls.fix_query_encoding(url2), url2)
+        self.assertEqual(urls.fix_query_encoding(url3), url3)
 
     def test_fix_query_encoding_encodes_values(self):
         url = "https://example.com?url=http://example.com&foo=bar"
