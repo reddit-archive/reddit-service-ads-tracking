@@ -112,7 +112,7 @@ class ClickEvent(Event):
                  request=None,
                  **kwargs):
         super(ClickEvent, self).__init__(
-            topic="ad_serving_event",
+            topic="ad_interaction_events",
             event_type="ad_click",
             request=request,
         )

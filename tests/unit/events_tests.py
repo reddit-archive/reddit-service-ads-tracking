@@ -316,7 +316,7 @@ class ClickEventTests(unittest.TestCase):
             boo="far",
         )
 
-        self.assertEqual(click.topic, "ad_serving_event")
+        self.assertEqual(click.topic, "ad_interaction_events")
         self.assertEqual(click.event_type, "ss.ad_click")
         self.assertEqual(click.get_field("url"), "http://example.com")
         self.assertEqual(click.get_field("process_notes"), "VALID")
