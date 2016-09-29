@@ -146,12 +146,12 @@ class EndpointTests(unittest.TestCase):
         )
         response = self.test_app.get(
             click_url,
-            status=301,
+            status=302,
         )
 
         self.assertResponse(
             response=response,
-            status_int=301,
+            status_int=302,
             headers=dict(
                 location=url,
             ),
@@ -165,12 +165,12 @@ class EndpointTests(unittest.TestCase):
         })
         response = self.test_app.get(
             _generate_click_url(url, data),
-            status=301,
+            status=302,
         )
 
         self.assertResponse(
             response=response,
-            status_int=301,
+            status_int=302,
             headers=dict(
                 location=url,
             )
@@ -189,23 +189,23 @@ class EndpointTests(unittest.TestCase):
         })
         response1 = self.test_app.get(
             _generate_click_url(url1, data1),
-            status=301,
+            status=302,
         )
         response2 = self.test_app.get(
             _generate_click_url(url2, data2),
-            status=301,
+            status=302,
         )
 
         self.assertResponse(
             response=response1,
-            status_int=301,
+            status_int=302,
             headers=dict(
                 location=url1,
             )
         )
         self.assertResponse(
             response=response2,
-            status_int=301,
+            status_int=302,
             headers=dict(
                 location=url2,
             )
@@ -219,12 +219,12 @@ class EndpointTests(unittest.TestCase):
         })
         response = self.test_app.get(
             _generate_click_url(url, data),
-            status=301,
+            status=302,
         )
 
         self.assertResponse(
             response=response,
-            status_int=301,
+            status_int=302,
             headers=dict(
                 location=url,
             )

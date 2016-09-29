@@ -1,4 +1,4 @@
-from pyramid.httpexceptions import HTTPMovedPermanently
+from pyramid.httpexceptions import HTTPFound
 
 
 def abort(request, status, message=None):
@@ -15,4 +15,4 @@ def abort(request, status, message=None):
 
 
 def redirect(destination):
-    return HTTPMovedPermanently(location=destination)
+    return HTTPFound(location=destination)
