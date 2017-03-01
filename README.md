@@ -1,4 +1,4 @@
-# reddit_service_ads_tracking
+# reddit_service_ads_tracking (DEPRICATED!)
 
 [![Build Status](https://travis-ci.org/reddit/reddit-service-ads-tracking.svg?branch=master)](https://travis-ci.org/reddit/reddit-service-ads-tracking)
 
